@@ -20,7 +20,7 @@ namespace wwwmy.Controllers
         public IActionResult GetById(string id)
         {
             var item = _testRepo.TestRepoMethod(id);
-            if(null == item){
+            if(null == item) {
                 return NotFound();
             }
 
