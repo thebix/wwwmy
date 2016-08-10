@@ -41,7 +41,12 @@ namespace wwwmy
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Main}/{action=Index}/{id?}");
+            });
         }
     }
 }

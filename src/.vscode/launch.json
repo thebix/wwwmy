@@ -8,7 +8,7 @@
             //"preLaunchTask": "build",
             "program": "${workspaceRoot}/wwwmy/bin/Debug/netcoreapp1.0/wwwmy.dll",
             "args": [],
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/wwwmy",
             "stopAtEntry": false,
             "externalConsole": false
         },
@@ -19,8 +19,9 @@
             //"preLaunchTask": "build",
             "program": "${workspaceRoot}/wwwmy/bin/Debug/netcoreapp1.0/wwwmy.dll",
             "args": [],
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/wwwmy",
             "stopAtEntry": false,
+            "requireExactSource": false,
             "launchBrowser": {
                 "enabled": true,
                 "args": "${auto-detect-url}",
@@ -46,7 +47,7 @@
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
-            "processId": "${command.pickProcess}"
+            "processId": "${command.pickProcess}/wwwmy"
         }
     ]
 }
