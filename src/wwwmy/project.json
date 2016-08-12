@@ -17,7 +17,8 @@
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     //Мои проекты
     "wwwmy.Interfaces":"1.0.0-*",
-    "wwwmy.DataLayer":"1.0.0-*"
+    "wwwmy.DataLayer":"1.0.0-*",
+    "wwwmy.Core":"1.0.0-*"
   },
 
   "tools": {
@@ -51,7 +52,8 @@
       "Views",
       "Areas/**/Views",
       "appsettings.json",
-      "web.config"
+      "web.config",
+      "nlog.config"
     ]
   },
 

@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using wwwmy.Interfaces.Repositories;
 using wwwmy.DataLayer;
+using wwwmy.Core;
+using wwwmy.Core.Interfaces;
 
 namespace wwwmy
 {
@@ -33,6 +35,9 @@ namespace wwwmy
             services.AddMvc();
 
             services.AddSingleton<ITestRepo, TestRepo>();
+
+            //Логгирование
+            services.AddSingleton<ICustomLogger>(new NLogLogger("nlog.config"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

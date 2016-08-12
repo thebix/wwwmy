@@ -5,11 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using wwwmy.Interfaces.Repositories;
 
+using wwwmy.Core.Interfaces;
+
 namespace wwwmy.Controllers
 {
     public class MainController : ControllerBase
     {
-        //TODO: на async - await
+        public MainController (ICustomLogger logger) : base(logger)
+        {
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
