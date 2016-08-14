@@ -4,7 +4,7 @@
     "isShellCommand": true,
     "args": [],
     "options":  {
-        "cwd": "${workspaceRoot}/wwwmy/"
+        "cwd": "${workspaceRoot}/src/wwwmy/"
     },
     "tasks": [
         {
