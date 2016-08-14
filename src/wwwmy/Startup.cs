@@ -11,6 +11,7 @@ using wwwmy.Interfaces.Repositories;
 using wwwmy.DataLayer;
 using wwwmy.Core;
 using wwwmy.Core.Interfaces;
+using wwwmy.Config;
 
 namespace wwwmy
 {
@@ -38,13 +39,21 @@ namespace wwwmy
 
             //Логгирование
             services.AddSingleton<ICustomLogger>(new NLogLogger("nlog.config"));
+            
+            # region Настройки appsettings
+            services.AddOptions();
+            services.Configure<TestConfig>(Configuration.GetSection("TestConfig"));
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            if(env.IsDevelopment())
+            {
+                loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+                loggerFactory.AddDebug();
+            }
 
             app.UseMvc(routes =>
             {

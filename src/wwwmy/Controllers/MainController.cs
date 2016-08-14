@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using wwwmy.Interfaces.Repositories;
 
 using wwwmy.Core.Interfaces;
+
 
 namespace wwwmy.Controllers
 {
@@ -13,6 +9,7 @@ namespace wwwmy.Controllers
     {
         public MainController (ICustomLogger logger) : base(logger)
         {
+            
         }
 
         [HttpGet]

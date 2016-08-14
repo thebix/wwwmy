@@ -1,0 +1,16 @@
+@model wwwmy.Models.TestViewModel
+@{
+    Layout = "_Layout";
+    ViewBag.HeadTitle = "Тестовая страница";
+}
+<div>
+    Test Page<br />
+    Get Id = @Model.Name<br />
+    <div>
+        appsettings.json section TestConfig:
+        <ul>
+            <li>Model.Options.Var1: @Model.Options.Var1</li>
+            <li>Model.Options.Var2: @Model.Options.Var2</li>
+        </ul>
+    </div>
+</div>
