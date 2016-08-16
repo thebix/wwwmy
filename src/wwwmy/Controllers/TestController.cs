@@ -9,6 +9,7 @@ using wwwmy.Config;
 
 namespace wwwmy.Controllers
 {
+    //[Route("[controller]/[action]")]
     [Route("[controller]")]
     public class TestController : ControllerBase
     {
@@ -34,10 +35,20 @@ namespace wwwmy.Controllers
         [HttpGet("{id?}")]
         public IActionResult GetById(string id)
         {
-
             return View("Index", new TestViewModel{
                 Name = id,
                 Key = id,
+                IsComplete = true,
+                Options = _options
+            });
+        }
+
+        [Route("[action]")]
+        public IActionResult Test()
+        {
+            return View("Index", new TestViewModel{
+                Name = "TEST action",
+                Key = "TEST action",
                 IsComplete = true,
                 Options = _options
             });

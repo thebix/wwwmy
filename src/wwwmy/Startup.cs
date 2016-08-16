@@ -53,7 +53,11 @@ namespace wwwmy
             {
                 loggerFactory.AddConsole(Configuration.GetSection("Logging"));
                 loggerFactory.AddDebug();
+
+                app.UseDeveloperExceptionPage(); //страница исключений при разработке
             }
+
+            app.UseStatusCodePages(); //status code error pages
 
             app.UseMvc(routes =>
             {
