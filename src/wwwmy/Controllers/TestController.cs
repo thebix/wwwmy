@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
 using wwwmy.Interfaces.Repositories;
-using wwwmy.DataLayer; 
 using wwwmy.Models;
 using wwwmy.Config;
 

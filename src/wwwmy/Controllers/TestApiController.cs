@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
 using wwwmy.Interfaces.Repositories;
-using wwwmy.DataLayer; 
 using wwwmy.Models;
 
 namespace wwwmy.Controllers

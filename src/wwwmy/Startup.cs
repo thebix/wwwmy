@@ -12,6 +12,9 @@ using wwwmy.DataLayer;
 using wwwmy.Core;
 using wwwmy.Core.Interfaces;
 using wwwmy.Config;
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace wwwmy
 {
@@ -47,17 +50,20 @@ namespace wwwmy
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, ICustomLogger customLog)
         {
+            app.UseStatusCodePages(); //status code error pages
+
             if(env.IsDevelopment())
             {
                 loggerFactory.AddConsole(Configuration.GetSection("Logging"));
                 loggerFactory.AddDebug();
 
                 app.UseDeveloperExceptionPage(); //страница исключений при разработке
-            }
-
-            app.UseStatusCodePages(); //status code error pages
+            } else
+            {
+                app.UseExceptionHandler("/error"); //Страница-ошибка с логгированием необработанных исключений
+            }            
 
             app.UseMvc(routes =>
             {
