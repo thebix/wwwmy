@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 using wwwmy.Interfaces.Repositories;
-using wwwmy.Models;
+using wwwmy.ViewModels;
 
 namespace wwwmy.Controllers
 {

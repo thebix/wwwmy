@@ -12,12 +12,14 @@
 </head>
 <body>
     <div id="header">
+        @RenderSection("Header", false)
         HEADER
     </div>
     <div id="body">
         @RenderBody()
     </div>
     <div id="footer">
+        @RenderSection("Footer", false)
         FOOTER
         <!--<script src="~/js/startUp.js" asp-append-version="true"></script>-->
     </div>

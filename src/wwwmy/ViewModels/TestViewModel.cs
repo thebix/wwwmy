@@ -1,6 +1,6 @@
 using wwwmy.Config;
 
-namespace wwwmy.Models
+namespace wwwmy.ViewModels
 {
     public class TestViewModel 
     {

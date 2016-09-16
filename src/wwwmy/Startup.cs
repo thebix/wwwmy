@@ -52,8 +52,9 @@ namespace wwwmy
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, ICustomLogger customLog)
         {
+            app.UseStaticFiles(); //INFO: изменение каталогов и тд http://goo.gl/YGycfT
             app.UseStatusCodePages(); //status code error pages
-
+            
             if(env.IsDevelopment())
             {
                 loggerFactory.AddConsole(Configuration.GetSection("Logging"));

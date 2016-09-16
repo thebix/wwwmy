@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
 using wwwmy.Interfaces.Repositories;
-using wwwmy.Models;
+using wwwmy.ViewModels;
 using wwwmy.Config;
 
 

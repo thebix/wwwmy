@@ -1,4 +1,6 @@
-@model wwwmy.Models.TestViewModel
+@model wwwmy.ViewModels.TestViewModel
+@using wwwmy.HtmlHelpers;
+
 @{
     Layout = "_Layout";
     ViewBag.HeadTitle = "Тестовая страница";
@@ -13,4 +15,7 @@
             <li>Model.Options.Var2: @Model.Options.Var2</li>
         </ul>
     </div>
+    @await Component.InvokeAsync("TestShared", new { someValue = 333 })
+    @Html.CreateString("Тестовая строка html-хелпера 666")
+    <a asp-controller="Main" asp-action="Index" asp-route-someId="someIdTest">Обратно через tag-helper</a>
 </div>
