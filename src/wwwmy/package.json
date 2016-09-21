@@ -1,0 +1,12 @@
+{
+    "version": "1.0.0",
+    "name": "asp.net",
+    "private": true,
+    "dependencies": {
+    "jquery": "latest",
+    "bootstrap": "latest",
+    "react":"latest",
+    "webpack": "latest", //?минификация, бандлы?
+    "typescript": "latest"
+  }
+}

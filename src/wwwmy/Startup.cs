@@ -15,6 +15,7 @@ using wwwmy.Config;
 using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.FileProviders;
 
 namespace wwwmy
 {
@@ -53,6 +54,18 @@ namespace wwwmy
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, ICustomLogger customLog)
         {
             app.UseStaticFiles(); //INFO: изменение каталогов и тд http://goo.gl/YGycfT
+            // добавляем поддержку каталога node_modules
+            
+            //TODO: https://goo.gl/HBPtBh в большинстве случаев для библиотек из node_modules используют минификацию/бандлинг с помощью Grunt/Gulp с последующим копированием в папку wwwroot, поэтому не придется прибегать к проекции запросов на каталог node_modules.
+            app.UseFileServer(new FileServerOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+                    System.IO.Path.Combine(env.ContentRootPath, "node_modules")
+                ),
+                RequestPath = "/lib",
+                EnableDirectoryBrowsing = false
+            });
+
             app.UseStatusCodePages(); //status code error pages
             
             if(env.IsDevelopment())
