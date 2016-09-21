@@ -1,0 +1,21 @@
+{
+  "name": "wwwmy",
+  "homepage": "https://github.com/thebix/wwwmy",
+  "authors": [
+    "Paul Byron <syntheticforms@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "latest",
+    "jquery": "latest"
+  }
+}
