@@ -1,12 +1,15 @@
 {
-    "version": "1.0.0",
-    "name": "asp.net",
-    "private": true,
-    "dependencies": {
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
     "jquery": "latest",
     "bootstrap": "latest",
-    "react":"latest",
-    "webpack": "latest", //?минификация, бандлы?
+    "react": "latest",
+    "react-dom": "latest",
+    "webpack": "latest",
+    "babel": "latest",
+    "babel-cli": "latest",
     "typescript": "latest"
   }
 }
