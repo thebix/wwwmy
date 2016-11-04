@@ -3,13 +3,19 @@
   "name": "asp.net",
   "private": true,
   "dependencies": {
-    "jquery": "latest",
-    "bootstrap": "latest",
+     "jquery": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "webpack": "latest",
-    "babel": "latest",
-    "babel-cli": "latest",
-    "typescript": "latest"
+    "redux": "latest",
+    "react-redux": "latest",
+    "bootstrap": "latest",
+
+
+
+    
+    "//": "webpack",
+    "//": "babel",
+    "//":"babel-cli",
+    "//": "typescript"
   }
 }
