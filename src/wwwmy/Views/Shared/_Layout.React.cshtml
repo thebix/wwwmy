@@ -1,0 +1,31 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section HeadScripts {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/dev/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment names="Staging,Production"><!-- на продакшне файлы из CDN-->
+        <!--//TODO: прописать скрипты и стили для продакшн-->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" asp-fallback-src="~/js/jquery/dist/jquery.min.js" asp-fallback-test="window.jQuery"></script>
+        <!--<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.0.0/css/bootstrap.min.css" 
+                asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-fallback-test-class="hidden" 
+                asp-fallback-test-property="visibility" asp-fallback-test-value="hidden" />-->
+                
+    </environment>
+}
+
+@RenderBody()
+
+@section FooterScripts {
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bundle.js"></script>
+    
+    <environment names="Development"><!-- на продакшне файлы из CDN-->
+        <!--<script type="text/babel" src="~/js/startUp.js"></script>-->
+    </environment>
+    <environment names="Staging,Production"><!-- на продакшне файлы из CDN-->
+        <!--//TODO: прописать скрипты и стили для продакшн-->
+    </environment>
+}

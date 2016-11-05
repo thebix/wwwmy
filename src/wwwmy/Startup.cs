@@ -56,15 +56,18 @@ namespace wwwmy
             app.UseStaticFiles(); //INFO: изменение каталогов и тд http://goo.gl/YGycfT
             // добавляем поддержку каталога node_modules
             
-            //TODO: https://goo.gl/HBPtBh в большинстве случаев для библиотек из node_modules используют минификацию/бандлинг с помощью Grunt/Gulp с последующим копированием в папку wwwroot, поэтому не придется прибегать к проекции запросов на каталог node_modules.
-            app.UseFileServer(new FileServerOptions()
+            if(env.IsDevelopment())
             {
-                FileProvider = new PhysicalFileProvider(
-                    System.IO.Path.Combine(env.ContentRootPath, "node_modules")
-                ),
-                RequestPath = "/lib",
-                EnableDirectoryBrowsing = false
-            });
+                //TODO: https://goo.gl/HBPtBh в большинстве случаев для библиотек из node_modules используют минификацию/бандлинг с помощью Grunt/Gulp с последующим копированием в папку wwwroot, поэтому не придется прибегать к проекции запросов на каталог node_modules.
+                app.UseFileServer(new FileServerOptions()
+                {
+                    FileProvider = new PhysicalFileProvider(
+                        System.IO.Path.Combine(env.ContentRootPath, "node_modules")
+                    ),
+                    RequestPath = "/dev",
+                    EnableDirectoryBrowsing = false
+                });
+            }
 
             app.UseStatusCodePages(); //status code error pages
             

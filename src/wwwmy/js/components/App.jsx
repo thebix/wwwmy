@@ -1,6 +1,7 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 
-export default App = () => {
+const App = () => {
     return (
         <div id="wrapper">
             <div id="header">
@@ -15,3 +16,7 @@ export default App = () => {
         </div>
     )
 }
+
+ReactDOM.render(
+    <App />, document.getElementById("root")
+)

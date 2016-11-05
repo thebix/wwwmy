@@ -1,5 +1,6 @@
 @{
     ViewBag.HeadTitle = "Главная страница";
+    Layout = "~/Views/Shared/_Layout.Core.cshtml";
 }
 <div>
     Main Index Page
@@ -9,3 +10,7 @@
         </li>
     </ul>
 </div>
+
+@section Header {
+    Header from INDEX<br />
+}

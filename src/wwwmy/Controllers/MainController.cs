@@ -15,7 +15,7 @@ namespace wwwmy.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return View("Index.React");
         }
     }
 }

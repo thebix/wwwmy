@@ -236,3 +236,6 @@ _Pvt_Extensions
 #ASP.NET 5
 project.lock.json
 artifacts/
+
+# My files
+wwwroot/js

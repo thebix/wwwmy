@@ -9,34 +9,12 @@
     <meta http-equiv="x-rim-auto-match" content="none">
     <!--<link rel="shortcut icon" href="/f/i/favicon.ico" type="image/x-icon">-->
     <title>@(string.IsNullOrEmpty(ViewBag.HeadTitle) ? "//TODO: HeadTitle" : ViewBag.HeadTitle)</title>
-<environment names="Development"><!-- на этапе разработки файлы тянем локально-->
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <script src="~/lib/jquery/dist/jquery.min.js" />
-    <script src="~/lib/react/dist/react.min.js" />
-    <script src="~/lib/redux/dist/redux.min.js" />
-    <script src="~/lib/react-redux/dist/react-redux.min.js" />
-</environment>
-<environment names="Staging,Production"><!-- на продакшне файлы из CDN-->
-    <!--//TODO: прописать скрипты и стили для продакшн-->
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" asp-fallback-src="~/lib/jquery/dist/jquery.min.js" asp-fallback-test="window.jQuery"></script>
-    <!--<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.0.0/css/bootstrap.min.css" 
-            asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-fallback-test-class="hidden" 
-            asp-fallback-test-property="visibility" asp-fallback-test-value="hidden" />-->
-    @RenderSection("HeadScripts", false)            
-</environment>
+    @RenderSection("HeadScripts", false) 
 </head>
 <body>
-    <div id="header">
-        @RenderSection("Header", false)
-        HEADER
-    </div>
-    <div id="body">
+    
+    <div id="root">
         @RenderBody()
-    </div>
-    <div id="footer">
-        @RenderSection("Footer", false)
-        FOOTER
-        <!--<script src="~/js/startUp.js" asp-append-version="true"></script>-->
     </div>
     @RenderSection("FooterScripts", false) 
 </body>
