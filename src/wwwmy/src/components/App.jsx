@@ -1,23 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+
+import Header from './Header'
+import Footer from './Footer'
+import Body from './Body'
+
+import appReducer from '../reducers/main'
+
+//redux store
+let store = createStore(appReducer)
 
 const App = () => {
     return (
-        <div id="wrapper">
-        
-            <div id="header">
-                HEADER
-            </div>
-            <div id="body">
-                BODY
-            </div>
-            <div id="footer">
-                FOOTER
-            </div>
+        <div id="root">
+            <Header />
+            <Body />
+            <Footer />
         </div>
     )
 }
 
 ReactDOM.render(
-    <App />, document.getElementById("root")
+    <Provider store={store}>
+        <App />
+    </Provider>, document.getElementById("wrapper")
 )
