@@ -1,10 +1,10 @@
 # Startup
-git clone ...
-dotnet restore
-cd src\wwwmy
-npm install / nmp update
-webpack
-dotnet run
+* git clone ...
+* dotnet restore
+* cd src\wwwmy
+* npm install / nmp update
+* webpack -p --progress --colors
+* dotnet run
 
 
 # Welcome to ASP.NET Core

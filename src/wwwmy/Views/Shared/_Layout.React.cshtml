@@ -4,7 +4,7 @@
 
 @section HeadScripts {
     <environment names="Development">
-        <link rel="stylesheet" href="~/dev/bootstrap/dist/css/bootstrap.css" />
+        <!--<link rel="stylesheet" href="~/dev/bootstrap/dist/css/bootstrap.css" />-->
     </environment>
     <environment names="Staging,Production"><!-- на продакшне файлы из CDN-->
         <!--//TODO: прописать скрипты и стили для продакшн-->
@@ -19,13 +19,11 @@
 @RenderBody()
 
 @section FooterScripts {
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bundle.js"></script>
-    
     <environment names="Development"><!-- на продакшне файлы из CDN-->
-        <!--<script type="text/babel" src="~/js/startUp.js"></script>-->
+        <script src="http://localhost:3001/js/app.min.js"></script>
     </environment>
     <environment names="Staging,Production"><!-- на продакшне файлы из CDN-->
         <!--//TODO: прописать скрипты и стили для продакшн-->
+        <script src="/js/app.min.js"></script>
     </environment>
 }

@@ -5,7 +5,7 @@
   "dependencies": {
     "//": "typescript",
     "babel-polyfill": "^6.16.0",
-    "bootstrap": "latest",
+    "//bootstrap": "latest",
     "jquery": "latest",
     "react": "latest",
     "react-dom": "latest",
@@ -18,9 +18,26 @@
     "babel-loader": "^6.2.7",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
-    "webpack": "^1.13.3"
+    "webpack": "^1.13.3",
+
+    "//webpack hot load": "",
+    "react-hot-loader": "latest",
+    "webpack-dev-server": "latest",
+
+    "//webpack-dev-middleware": "latest",
+    "//webpack-hot-middleware": "latest",
+
+    "//babel-preset-react-hmre": "latest",
+
+    "//express": "^4.13.4",
+    "//babel-preset-stage-0": "^6.0.15",
+
+    "//### webpack hot load": "http://stackoverflow.com/questions/38002666/dev-server-not-hot-reloading-failing-to-build",
+    "extract-text-webpack-plugin": "~1.0.1",
+    "webpack-validator": "~2.2.9"
   },
   "scripts": {
-    "build": "babel js -d js2"
+    "start": "node server.js",
+    "build": "set NODE_ENV=production && webpack -p --progress --colors"
   }
 }
