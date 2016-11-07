@@ -58,7 +58,19 @@ const config = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     //new webpack.NoErrorsPlugin(),
-    //new ExtractTextPlugin('styles.css')
+    //new ExtractTextPlugin('styles.css'),
+
+    // production build
+    // new webpack.DefinePlugin({
+    //   'process.env':{
+    //     'NODE_ENV': JSON.stringify('production')
+    //   }
+    // }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress:{
+    //     warnings: true
+    //   }
+    // })
   ],
   devServer: {
       headers: { "Access-Control-Allow-Origin": "*" }

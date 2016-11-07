@@ -38,6 +38,6 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build": "set NODE_ENV=production && webpack -p --progress --colors"
+    "build": "set NODE_ENV=production&&export NODE_ENV=production&& webpack -p --progress --colors"
   }
 }
