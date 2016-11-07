@@ -7,7 +7,7 @@ const path = require('path');
 
 const rootPath = path.resolve(__dirname, 'src');
 
-var isProduction = process.env.NODE_ENV === 'production'; //TODO: не работает
+var isProduction = process.env.NODE_ENV === 'production';
 
 console.log("\n****************************************")
 console.log("* Webpack render. IsProduction = " + isProduction.toString().toUpperCase() + " *")
@@ -15,7 +15,7 @@ console.log("****************************************")
 
 var entryPoint = path.resolve(rootPath, 'startUp.js')
 var app = isProduction ? [entryPoint] : [
-    'webpack-dev-server/client?http://localhost:3001',
+    'webpack-dev-server/client?http://localhost:3001', //+ require("ip").address() +
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     entryPoint
 ];
